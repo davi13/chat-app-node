@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/davi13/chat-app-node/issues"
   },
-  "homepage": "https://github.com/davi13/chat-app-node#readme"
+  "homepage": "https://github.com/davi13/chat-app-node#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
