@@ -1,7 +1,7 @@
 const socket = io();
 
-socket.on('messageUpdated', (message) => {
-    console.log('The count has been updated!', message)
+socket.on('message', (message) => {
+    console.log(message)
 });
 
 // document.querySelector('#increment').addEventListener('click', () => {

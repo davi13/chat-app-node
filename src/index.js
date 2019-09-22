@@ -12,14 +12,14 @@ const publicDirectoryPath = path.join(__dirname, '../public');
 
 app.use(express.static(publicDirectoryPath));
 
-let message = 'Welcome';
+
 
 io.on('connection', (socket) => {
     console.log('New Websocket connection');
-    socket.emit('messageUpdated', message)
+    socket.emit('message', 'Welcome')
 
     socket.on('print', () => {
-        io.emit('messageUpdated', message);
+        io.emit('message', 'Welcome');
     })
 })
 
