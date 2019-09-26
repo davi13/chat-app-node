@@ -29,8 +29,8 @@ io.on('connection', (socket) => {
     });
 
     //Shared a Location with others clients
-    socket.on('locationMessage', (coords, callback) => {
-        io.emit('message', ` https://google.com/maps?q=${coords.latitude},${coords.longitude}`);
+    socket.on('sendLocation', (coords, callback) => {
+        io.emit('locationMessage', ` https://google.com/maps?q=${coords.latitude},${coords.longitude}`);
         callback();
 
 

@@ -11,6 +11,8 @@
 <body>
     <h1>Chat App !</h1>
     <div id="messages"></div>
+    <div id="my-location"></div>
+
     <form action="#" id="message-form">
         <input type="text" name="message" placeholder="your message">
         <button>send</button>
@@ -20,6 +22,7 @@
     <script id="message-template" type="text/html">
         <div>
             <p>{{ message }}</p>
+            <p>{{ location  }}</p>
         </div>
         </script>
 
