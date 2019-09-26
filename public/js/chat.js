@@ -18,6 +18,11 @@ socket.on('message', (message) => {
     $messages.insertAdjacentHTML('beforeend', html)
 });
 
+
+socket.on('locationMessage', (url) => {
+    console.log(url);
+})
+
 $messageForm.addEventListener('submit', (e) => {
     e.preventDefault();
     //disable
@@ -48,7 +53,7 @@ $sendLocationButton.addEventListener('click', () => {
     $sendLocationButton.setAttribute('disabled', 'disabled');
 
     navigator.geolocation.getCurrentPosition((position) => {
-        socket.emit('sendLocation', {
+        socket.emit('locationMessage', {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
         }, () => {
@@ -58,6 +63,4 @@ $sendLocationButton.addEventListener('click', () => {
     })
 })
 
-socket.emit('locationMessage', (message) => {
-    console.log(message);
-})
+
