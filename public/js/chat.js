@@ -57,3 +57,7 @@ $sendLocationButton.addEventListener('click', () => {
         })
     })
 })
+
+socket.emit('locationMessage', (message) => {
+    console.log(message);
+})
