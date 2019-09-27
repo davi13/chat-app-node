@@ -3,6 +3,7 @@ const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
 const Filter = require('bad-words');
+const { generateMessage } = require('./utils/messages');
 
 const app = express();
 const server = http.createServer(app);
@@ -16,10 +17,7 @@ app.use(express.static(publicDirectoryPath));
 io.on('connection', (socket) => {
     console.log('New Websocket connection');
 
-    socket.emit('message', {
-        text: 'Welcome',
-        created: new Date().getTime()
-    });
+    socket.emit('message', generateMessage('Welcome'));
     socket.broadcast.emit('message', 'A new user has joined!');
 
     socket.on('sendMessage', (message, callback) => {
