@@ -21,7 +21,6 @@ io.on('connection', (socket) => {
 
         socket.emit('message', generateMessage('Welcome'));
         socket.broadcast.to(room).emit('message', generateMessage(`${username} has joined!`));
-
         //socket.emit, io.emit, socket.broadcast.emi
         //io.to.emit, socket.broadcast.to emit
     })
@@ -31,7 +30,7 @@ io.on('connection', (socket) => {
         if (filter.isProfane(message)) {
             return callback('Profanity is not allowed!')
         }
-        io.emit('message', generateMessage(message));
+        io.to('paris').emit('message', generateMessage(message));
         callback();
     });
 
