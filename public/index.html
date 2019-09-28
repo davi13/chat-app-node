@@ -28,8 +28,12 @@
         </div>
     </div>
     <script id="message-template" type="text/html">
-        <div>
-            <p>{{createdAt}} - {{ message }}</p>
+        <div class="message">
+            <p>
+                <span class="message__name">Some user name</span>
+                <span class="message__meta">{{createdAt}}</span>
+            </p>
+            <p> {{ message }}</p>
         </div>
     </script>
 
