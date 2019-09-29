@@ -1,5 +1,5 @@
 const users = [];
-//addUser, removeUser, getUsers, getUSerInroom
+//addUser, removeUser, getUsers,getUSerInroom
 const addUser = ({ id, username, room }) => {
     //Clean th data
     username = username.trim().toLowerCase();
