@@ -50,5 +50,5 @@ const getUser = (id) => {
     return myUser;
 }
 
-const res = getUser(1);
+const res = getUser(4);
 console.log(res);
