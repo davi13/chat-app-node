@@ -57,13 +57,12 @@ addUser({
 const getUser = (id) => {
     return users.find((user) => user.id === id);
 }
-const user = getUser(1);
-console.log(user)
+//const user = getUser(1);
+//console.log(user)
+const getUsersInRoom = (room) => {
+    room = room.trim().toLowerCase();
+    return users.filter((user) => user.room === room);
+}
+const userList = getUsersInRoom('rep dom');
 
-// const getUsersInRoom = (nameRoom) => {
-//     users.filter((user) => user.room === nameRoom);
-//     return userInroom;
-// }
-// const res = getUsersInRoom('paris');
-
-console.log(res);
+console.log(userList);
