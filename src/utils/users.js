@@ -42,13 +42,28 @@ addUser({
     id: 1,
     username: 'davi',
     room: 'paris'
-
+});
+addUser({
+    id: 2,
+    username: 'Broly',
+    room: 'paris'
+});
+addUser({
+    id: 3,
+    username: 'Goku',
+    room: 'axe'
 });
 
 const getUser = (id) => {
     const myUser = users.find((user) => user.id === id);
     return myUser;
 }
+const getUsersInRoom = (nameRoom) => {
+    const userInroom = users.filter((user) => {
+        return user.room === nameRoom
+    })
+    return userInroom;
+}
+const res = getUsersInRoom('paris');
 
-const res = getUser(4);
 console.log(res);
