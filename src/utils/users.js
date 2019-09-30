@@ -55,15 +55,15 @@ addUser({
 });
 
 const getUser = (id) => {
-    const myUser = users.find((user) => user.id === id);
-    return myUser;
+    return users.find((user) => user.id === id);
 }
-const getUsersInRoom = (nameRoom) => {
-    const userInroom = users.filter((user) => {
-        return user.room === nameRoom
-    })
-    return userInroom;
-}
-const res = getUsersInRoom('paris');
+const user = getUser(1);
+console.log(user)
+
+// const getUsersInRoom = (nameRoom) => {
+//     users.filter((user) => user.room === nameRoom);
+//     return userInroom;
+// }
+// const res = getUsersInRoom('paris');
 
 console.log(res);
