@@ -16,12 +16,14 @@ const addUser = ({ id, username, room }) => {
     const existingUser = users.find((user) => {
         return user.room === room && user.username === username
     });
+
     //Validate username
     if (existingUser) {
         return {
             error: 'Username is in use!'
         }
     }
+
     //store user
     const user = { id, username, room }
     users.push(user);
@@ -43,7 +45,10 @@ addUser({
 
 });
 
-console.log(users);
-const removedUser = removeUser(1);
-console.log(removedUser)
-console.log(users);
+const getUser = (id) => {
+    const myUser = users.find((user) => user.id === id);
+    return myUser;
+}
+
+const res = getUser(1);
+console.log(res);
