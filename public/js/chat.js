@@ -68,11 +68,9 @@ socket.on('roomData', ({ room, users }) => {
 $messageForm.addEventListener('submit', (e) => {
     e.preventDefault();
     //disable
-
     $messageFormButton.setAttribute('disabled', 'disabled');
 
     const message = e.target.elements.message.value
-
 
     socket.emit('sendMessage', message, (error) => {
         $messageFormButton.removeAttribute('disabled');
