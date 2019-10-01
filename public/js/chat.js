@@ -88,7 +88,6 @@ $sendLocationButton.addEventListener('click', () => {
     if (!navigator.geolocation) {
         return alert('Geolocation is no supported by your browser');
     }
-
     //disable
     $sendLocationButton.setAttribute('disabled', 'disabled');
 
