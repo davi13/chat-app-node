@@ -9,7 +9,6 @@ const { addUser, removeUser, getUser, getUsersInRoom } = require('./utils/users'
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
-
 const port = process.env.PORT || 3000
 const publicDirectoryPath = path.join(__dirname, '../public');
 
@@ -19,7 +18,6 @@ io.on('connection', (socket) => {
     console.log('New Websocket connection');
     socket.on('join', ({ username, room }, callback) => {
         const { error, user } = addUser({ id: socket.id, username, room });
-
         if (error) {
             return callback(error);
         }
